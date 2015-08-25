@@ -1,0 +1,20 @@
+<header ng-include="'nav.html'"></header>
+<div class="row">
+  <div class="col-sm-6 col-md-4 col-lg-4 col-xs-12">
+    <div class="thumbnail">
+      <img ng-src="{{deal.pic_link}}" alt="{{deal.title}}">
+      <div class="caption">
+        <h3>{{deal.title}}</h3>
+        <p>{{deal.description}}</p>
+        <p>Unit Price: ${{deal.price/100}}</p>
+        <p>Quantity: {{order.quantity}}</p>
+        <p>Expense: <span class="label label-success">${{order.quantity * deal.price / 100}}<span></p>
+        <p>Date: {{order.date_str}}</p>
+        <p>Order Status: {{order.status}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p><span style="color:red">{{error_msg}}</span></p>
+<p><font color='blue'>{{msg}}</font></p>

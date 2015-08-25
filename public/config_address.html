@@ -1,0 +1,35 @@
+<header ng-include="'nav.html'"></header>
+<form name = "addressForm" role="form" ng-submit="setAddress()">
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_street"><span class="label label-info">Address</span></label>
+      <input type="text" class="form-control" id="address_street" ng-model="address.street">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_city"><span class="label label-info">City</span></label>
+      <input type="text" class="form-control" id="address_city" ng-model="address.city">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_zipcode"><span class="label label-info">Zipcode</span></label>
+      <input type="text" class="form-control" id="address_zipcode" ng-model="address.zipcode">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_state"><span class="label label-info">State</span></label>
+      <input type="text" class="form-control" id="address_state" ng-model="address.state">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_country"><span class="label label-info">Country</span></label>
+      <input type="text" class="form-control" id="address_country" ng-model="address.country">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+
+</form>

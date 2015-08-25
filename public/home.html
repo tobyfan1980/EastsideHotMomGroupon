@@ -1,0 +1,15 @@
+<header ng-include="'nav.html'"></header>
+<h1><span class="label label-primary">{{title}}</span></h1>
+<div class="row">
+  <div class="thumbnail col-sm-6 col-md-4 col-lg-4 col-xs-12" ng-repeat='deal in deals' ng-click="gotoDeal(deal)">
+    <!--<a ng-href="#/deals/{{deal._id}}" class="">-->
+    <a href="#" class="">
+      <img ng-src="{{deal.pic_link}}" alt="{{deal.title}}">
+      <div class="caption">
+        <h3>{{deal.title}}</h3>
+        <p>{{deal.description}}</p>
+        <p><b>{{deal.total_order_units}} bought</b></p>
+      </div>
+    </a>
+  </div>
+</div>

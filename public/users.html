@@ -1,0 +1,65 @@
+<header ng-include="'nav.html'"></header>
+<h1><span class="label label-info">{{title}}</span></h1>
+<div class="row">
+<form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search order" ng-model="searchOrder">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <button ng-repeat="i in getNumberAsArray(numberOfPages()) track by $index" ng-click="setCurrentPage($index)">{{$index + 1}}</button>
+</div>
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="sortType = 'user.email'; sortReverse = !sortReverse">
+            <span class="label label-primary">Email</span>
+            <span ng-show="sortType == 'email' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'email' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'user.name'; sortReverse = !sortReverse">
+            <span class="label label-primary">Name</span>
+            <span ng-show="sortType == 'user.name' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'user.name' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'user.wechat_id'; sortReverse = !sortReverse">
+            <span class="label label-primary">Wechat ID</span>
+            <span ng-show="sortType == 'user.wechat_id' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'user.wechat_id' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'user.user_type'; sortReverse = !sortReverse">
+            <span class="label label-primary">Type</span>
+            <span ng-show="sortType == 'user.user_type' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'user.user_typ' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="user in users | orderBy:sortType:sortReverse | filter:searchOrder | limitTo:pageSize:currentPage*pageSize"
+      style="cursor: pointer;">
+        <td>{{ user.email }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.wechat_id }}</td>
+        <td>{{ user.user_type }}</td>
+        
+      </tr>
+    </tbody>
+
+  </table>
+</div>

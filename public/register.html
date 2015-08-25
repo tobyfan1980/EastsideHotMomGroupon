@@ -1,0 +1,77 @@
+<header ng-include="'nav.html'"></header>
+<form name = "registerForm" role="form" ng-submit="register()">
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="name"><span class="label label-info">Full Name <font color="grey">(required)</font></span></label>
+      <input type="text" class="form-control" id="fullname" placeholder="John Doe" ng-model="user_info.name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="email"><span class="label label-info">Email <font color="grey">(required)</font></span></label>
+      <input type="email" class="form-control" id="email" placeholder="Email" ng-model="user_info.email">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="password"><span class="label label-info">Password <font color="grey">(required)</font></span></label>
+      <input type="password" class="form-control" id="password" ng-model="user_info.password">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="wechat_id"><span class="label label-info">Wechat ID <font color="grey">(required)</font></span></label>
+      <input type="text" class="form-control" id="wechat_id" placeholder="WechatID" ng-model="user_info.wechat_id">
+    </div>
+  </div>
+  <div class="row">
+    <div class="checkbox col-sm-6 col-md-4">
+
+      <label><input type="checkbox" id="distributor" ng-model="user_info.distributor"/>
+        <span class="label label-info">Be a distributor</span>
+      </label>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="phone"><span class="label label-info">Phone</span></label>
+      <input type="text" class="form-control" id="phone" ng-model="user_info.phone">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_street"><span class="label label-info">Address</span></label>
+      <input type="text" class="form-control" id="address_street" ng-model="address.street">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_city"><span class="label label-info">City</span></label>
+      <input type="text" class="form-control" id="address_city" ng-model="address.city">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_zipcode"><span class="label label-info">Zipcode</span></label>
+      <input type="text" class="form-control" id="address_zipcode" ng-model="address.zipcode">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_state"><span class="label label-info">State</span></label>
+      <input type="text" class="form-control" id="address_state" ng-model="address.state">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-md-4">
+      <label for="address_country"><span class="label label-info">Country</span></label>
+      <input type="text" class="form-control" id="address_country" ng-model="address.country">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">Register</button>
+
+</form>
+
+<p><span style="color:red">{{error_msg}}</span></p>
+<p><font color='blue'>{{msg}}</font></p>
