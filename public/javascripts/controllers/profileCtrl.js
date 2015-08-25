@@ -5,8 +5,7 @@ angular
     function($scope, $window, $http, session, addressService){
       $scope.msg = 'ready';
       $scope.error_msg = '';
-      //$scope.setCurrentUser(session.user);
-
+      
       $scope.updateCurrentUserFromDB();
 
       console.log($scope.currentUser);
